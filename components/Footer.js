@@ -12,8 +12,8 @@ export default function Footer() {
           <h3>🌿 Plants24</h3>
           <p>Bring nature closer to your home</p>
 
-          <p><strong>📍 Address:</strong> Somatane Phata, Parandwadi Road, Near Blue Dart Office, Tal. Maval, Dist. Pu ne-410506</p>
-          <p><strong>📞 Contact:</strong> +91 8421265523</p>
+          <p><strong>📍 Address:</strong> Somatane Phata, Parandwadi Road, Near Blue Dart Office, Tal. Maval, Dist. Pune-410506</p>
+          <p ><strong>📞 Contact:</strong> +91 8421265523</p>
           <p><strong>✉️ Email:</strong> patilyoge625@gmail.com</p>
         </div>
 

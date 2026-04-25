@@ -102,10 +102,10 @@ export default function Home({ products }) {
         <div className={styles.footerContent}>
           <div className={styles.left}>
             <h3>🌿 Plants24</h3>
-            <p>Bring nature closer to your home</p>
-            <p>📍 Pune, Maharashtra</p>
-            <p>📞 +91 8421265523</p>
-            <p>✉️ plants24@gmail.com</p>
+          
+           <p><strong>📍 Address:</strong> Somatane Phata, Parandwadi Road, Near Blue Dart Office, Tal. Maval, Dist. Pune-410506</p>
+          <p><strong>📞 Contact:</strong> +91 8421265523</p>
+          <p><strong>✉️ Email:</strong> patilyoge625@gmail.com</p>
           </div>
 
           <div className={styles.right}>

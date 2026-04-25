@@ -86,31 +86,8 @@
 }
 
 /* ENQUIRE BUTTON */
-.enquireBtn {
-  position: fixed;
-  bottom: 80px;
-  right: 20px;
-  background: linear-gradient(135deg, #22c55e, #16a34a);
-  color: white;
-  border: none;
-  padding: 14px 20px;
-  border-radius: 50px;
-  font-size: 14px;
-  font-weight: 600;
-  cursor: pointer;
-  z-index: 1000;
 
-  display: flex;
-  align-items: center;
-  gap: 8px;
 
-  box-shadow: 0 10px 25px rgba(0,0,0,0.2);
-  transition: all 0.3s ease;
-}
-
-.enquireBtn:hover {
-  transform: translateY(-3px);
-}
 @media (max-width: 768px) {
   .container {
     padding: 15px;
@@ -175,5 +152,12 @@
 /* CLICK */
 .enquireBtn:active {
   transform: scale(0.95);
+}
+@media (max-width: 768px) {
+  .enquireBtn {
+    bottom: 70px;
+    right: 15px;
+    padding: 10px 14px;
+  }
 }
 }

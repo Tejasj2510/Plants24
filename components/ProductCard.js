@@ -1,14 +1,17 @@
+import Link from "next/link";
 import styles from "./ProductCard.module.css";
 
 export default function ProductCard({ product, onSelect, selected }) {
   return (
     <div className={styles.card}>
-      <img
-        src={product.images?.[0]}
-        alt={product.name}
-        className={styles.img}
-      />
+     <Link href={`/product/${product.slug.current}`}>
+  <img
+    src={product.images?.[0]}
+    alt={product.name}
+    className={styles.img}
+  />
 
+</Link>
       <div className={styles.info}>
         <h4>{product.name}</h4>
         <p className={styles.price}>₹ {product.price}</p>

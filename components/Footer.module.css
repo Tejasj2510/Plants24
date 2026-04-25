@@ -63,4 +63,12 @@
   .socials {
     justify-content: flex-start;
   }
+  .footer a {
+  color: inherit;        /* same as text color */
+  text-decoration: none; /* remove underline */
+}
+
+.footer a:hover {
+  color: #22c55e;        /* optional hover effect */
+}
 }

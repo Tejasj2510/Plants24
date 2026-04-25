@@ -2,47 +2,97 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 30px;
-  background: white;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  padding: 14px 30px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px); /* 🔥 glass effect */
+  box-shadow: 0 4px 20px rgba(0,0,0,0.05);
   position: sticky;
   top: 0;
   z-index: 1000;
+  border-radius: 20px;
 }
 
+/* LOGO */
 .logo {
   cursor: pointer;
-  font-weight: bold;
+  font-weight: 700;
+  font-size: 20px;
   color: #166534;
+  letter-spacing: 0.5px;
 }
 
-/* LINKS */
+/* LINKS CONTAINER */
 .links {
   display: flex;
-  gap: 20px;
+  gap: 25px;
+  align-items: center;
 }
 
-/* BUTTON STYLE (fix ugly UI) */
+/* BUTTON STYLE */
 .links button {
   background: none;
   border: none;
-  font-size: 16px;
+  font-size: 15px;
+  font-weight: 500;
   cursor: pointer;
-  padding: 6px 10px;
-  transition: 0.3s;
+  padding: 6px 8px;
+  position: relative;
+  color: #374151;
+  transition: all 0.3s ease;
 }
 
+/* HOVER EFFECT */
 .links button:hover {
   color: #22c55e;
 }
 
-/* ACTIVE LOOK (optional) */
-.links button:focus {
-  border-bottom: 2px solid #22c55e;
+/* UNDERLINE ANIMATION */
+.links button::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0%;
+  height: 2px;
+  background: #22c55e;
+  transition: 0.3s;
+}
+
+.links button:hover::after {
+  width: 100%;
+}
+
+/* ACTIVE TAB */
+.active {
+  color: #22c55e;
+}
+
+.active::after {
+  width: 100%;
 }
 
 /* CART */
 .cart {
   font-size: 20px;
   cursor: pointer;
+  transition: 0.2s;
+}
+
+.cart:hover {
+  transform: scale(1.1);
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .nav {
+    padding: 12px 15px;
+  }
+
+  .links {
+    gap: 15px;
+  }
+
+  .links button {
+    font-size: 14px;
+  }
 }
