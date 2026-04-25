@@ -1,0 +1,27 @@
+/* GLOBAL RESET */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ROOT VARIABLES */
+:root {
+  --beige:       #f5f0e8;
+  --beige-dark:  #ede6d6;
+  --green:       #2e7d4f;
+  --green-light: #d6ead8;
+  --green-dark:  #1a4a2e;
+  --peach:       #f5dcc8;
+  --text:        #020202;
+  --muted:       #000000;
+  --white:       #ffffff;
+  --border:      #ddd8cc;
+  --radius-sm:   10px;
+  --radius-md:   16px;
+  --radius-lg:   24px;
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-body:    'DM Sans', sans-serif;
+}

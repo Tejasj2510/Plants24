@@ -1,0 +1,53 @@
+.card {
+  background: white;
+  border-radius: 18px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+}
+
+.img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+/* INFO */
+.info {
+  padding: 12px;
+}
+
+.info h4 {
+  font-size: 16px;
+  margin-bottom: 4px;
+}
+
+.price {
+  color: var(--green);
+  font-weight: 600;
+}
+
+/* BUTTON */
+.buyBtn {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  background: var(--green);
+  color: white;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 20px;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.buyBtn:hover {
+  background: var(--green-dark);
+}

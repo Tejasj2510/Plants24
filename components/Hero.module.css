@@ -1,0 +1,73 @@
+/* HERO */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  border-radius: 25px;
+  margin-bottom: 30px;
+
+  /* BACKGROUND IMAGE */
+  background-image: url("https://media.istockphoto.com/id/1426421208/photo/variety-of-green-tropical-succulent-house-plants-and-trees-in-white-wall-room-with-sunlight.jpg?s=612x612&w=0&k=20&c=KT_1b81R3Dh14yeeGccbBYhu4-ioN3mT28mLaAdFPBw=");
+  background-size: cover;
+  background-position: center;
+
+  min-height: 280px;
+
+  position: relative;
+  overflow: hidden;
+}
+
+/* OVERLAY (IMPORTANT) */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 25px;
+}
+
+/* CONTENT */
+.hero > * {
+  position: relative;
+  z-index: 2;
+  color: white;
+}
+
+/* TEXT */
+.left h1 {
+  font-family: var(--font-display);
+  font-size: 32px;
+  margin-bottom: 10px;
+}
+
+.left p {
+  margin-bottom: 15px;
+}
+
+/* BUTTON */
+.btn {
+  background: var(--green);
+  color: white;
+  padding: 10px 18px;
+  border-radius: 20px;
+  border: none;
+}
+
+/* RIGHT IMAGE (optional) */
+.right img {
+  width: 200px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .right img {
+    margin-top: 20px;
+  }
+  
+}

@@ -1,0 +1,25 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background: white;
+  border-radius: 20px;
+  margin-bottom: 20px;
+}
+
+.logo {
+  font-family: var(--font-display);
+  color: var(--green-dark);
+}
+
+.links {
+  display: flex;
+  gap: 20px;
+  color: var(--muted);
+}
+
+.cart {
+  font-size: 20px;
+  cursor: pointer;
+}
