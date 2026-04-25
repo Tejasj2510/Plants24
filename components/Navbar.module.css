@@ -2,23 +2,46 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 20px;
+  padding: 15px 30px;
   background: white;
-  border-radius: 20px;
-  margin-bottom: 20px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
 .logo {
-  font-family: var(--font-display);
-  color: var(--green-dark);
+  cursor: pointer;
+  font-weight: bold;
+  color: #166534;
 }
 
+/* LINKS */
 .links {
   display: flex;
   gap: 20px;
-  color: var(--muted);
 }
 
+/* BUTTON STYLE (fix ugly UI) */
+.links button {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 6px 10px;
+  transition: 0.3s;
+}
+
+.links button:hover {
+  color: #22c55e;
+}
+
+/* ACTIVE LOOK (optional) */
+.links button:focus {
+  border-bottom: 2px solid #22c55e;
+}
+
+/* CART */
 .cart {
   font-size: 20px;
   cursor: pointer;

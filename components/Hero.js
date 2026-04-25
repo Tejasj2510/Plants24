@@ -17,7 +17,7 @@ export default function Hero() {
       </div>
 
       <div className={styles.right}>
-        <img src="" />
+        {/* <img src="" /> */}
       </div>
     </div>
   );

@@ -1,0 +1,117 @@
+/* OVERLAY (background blur + center modal) */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+/* MODAL BOX */
+.modal {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  width: 320px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+  animation: popup 0.25s ease;
+}
+
+/* POPUP ANIMATION */
+@keyframes popup {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* TITLE */
+.modal h2 {
+  text-align: center;
+  margin-bottom: 5px;
+  color: #166534;
+}
+
+/* INPUT FIELDS */
+.modal input,
+.modal select,
+.modal textarea {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+  outline: none;
+  font-size: 14px;
+  transition: 0.2s;
+}
+
+/* FOCUS EFFECT */
+.modal input:focus,
+.modal select:focus,
+.modal textarea:focus {
+  border-color: #22c55e;
+  box-shadow: 0 0 0 2px rgba(34, 197, 94, 0.2);
+}
+
+/* TEXTAREA FIX */
+.modal textarea {
+  resize: none;
+  height: 80px;
+}
+
+/* BUTTON CONTAINER */
+.actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* BUTTON BASE */
+.actions button {
+  flex: 1;
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: 0.3s;
+}
+
+/* SEND BUTTON */
+.actions button:first-child {
+  background: #22c55e;
+  color: white;
+}
+
+.actions button:first-child:hover {
+  background: #16a34a;
+}
+
+/* CLOSE BUTTON */
+.actions button:last-child {
+  background: #e5e7eb;
+  color: #111;
+}
+
+.actions button:last-child:hover {
+  background: #d1d5db;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 480px) {
+  .modal {
+    width: 90%;
+    padding: 20px;
+  }
+}
