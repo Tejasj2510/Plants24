@@ -45,7 +45,7 @@ export default function ContactForm({ onClose }) {
         />
 
         <select name="plan" onChange={handleChange}>
-          <option value="">Enqury Type</option>
+          <option value="">Enquiry Type</option>
           <option>Indoor Plants</option>
           <option>Outdoor Plants</option>
           <option>Bulk Order</option>
