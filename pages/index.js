@@ -11,17 +11,14 @@ export default function Home({ products }) {
 
   const [search, setSearch] = useState("");
   const [category, setCategory] = useState("all");
-  const [price, setPrice] = useState(1000);
-
-  // ✅ NEW STATE (for bulk select)
   const [selected, setSelected] = useState([]);
 
-  // ✅ FILTER LOGIC
+  // ✅ FILTER (SAFE)
   const filtered = safeProducts.filter((p) => {
     return (
-      p?.name?.toLowerCase().includes(search.toLowerCase()) &&
-      (category === "all" || p?.category === category) &&
-      p?.price <= price
+      (p?.name || "").toLowerCase().includes(search.toLowerCase()) &&
+      (category === "all" ||
+        (p?.category || "").toLowerCase() === category.toLowerCase())
     );
   });
 
@@ -70,23 +67,28 @@ export default function Home({ products }) {
 
       {/* GRID */}
       <div className={styles.grid}>
-        {filtered.map((p) => (
-          <ProductCard
-            key={p._id}
-            product={p}
-            onSelect={toggleSelect}
-            selected={selected.some((item) => item._id === p._id)}
-          />
-        ))}
+        {filtered.map((p) => {
+          // ✅ SAFETY (prevents hydration crash)
+          if (!p?._id || !p?.slug?.current) return null;
+
+          return (
+            <ProductCard
+              key={p._id}
+              product={p}
+              onSelect={toggleSelect}
+              selected={selected.some((item) => item._id === p._id)}
+            />
+          );
+        })}
       </div>
 
-      {/* ✅ BULK ENQUIRY BUTTON */}
+      {/* BULK BUTTON */}
       {selected.length > 0 && (
-  <button className={styles.enquireBtn} onClick={sendBulkToWhatsApp}>
-    <span className={styles.count}>{selected.length}</span>
-    Enquire Now
-  </button>
-)}
+        <button className={styles.enquireBtn} onClick={sendBulkToWhatsApp}>
+          <span className={styles.count}>{selected.length}</span>
+          Enquire Now
+        </button>
+      )}
 
       {/* WHATSAPP FLOAT */}
       <a
@@ -102,10 +104,17 @@ export default function Home({ products }) {
         <div className={styles.footerContent}>
           <div className={styles.left}>
             <h3>🌿 Plants24</h3>
-          
-           <p><strong>📍 Address:</strong> Somatane Phata, Parandwadi Road, Near Blue Dart Office, Tal. Maval, Dist. Pune-410506</p>
-          <p><strong>📞 Contact:</strong> +91 8421265523</p>
-          <p><strong>✉️ Email:</strong> patilyoge625@gmail.com</p>
+
+            <p>
+              <strong>📍 Address:</strong> Somatane Phata, Parandwadi Road,
+              Near Blue Dart Office, Tal. Maval, Dist. Pune-410506
+            </p>
+            <p>
+              <strong>📞 Contact:</strong> +91 8421265523
+            </p>
+            <p>
+              <strong>✉️ Email:</strong> patilyoge625@gmail.com
+            </p>
           </div>
 
           <div className={styles.right}>
@@ -129,9 +138,13 @@ export default function Home({ products }) {
   );
 }
 
+//////////////////////////////////////////////////////
+// ✅ VERY IMPORTANT (YOU BROKE THIS EARLIER)
+//////////////////////////////////////////////////////
+
 export async function getServerSideProps() {
   const products = await client.fetch(`
-    *[_type == "product"]{
+    *[_type == "product"] | order(_createdAt asc) {
       _id,
       name,
       price,
