@@ -73,3 +73,21 @@
   font-size: 12px;
   cursor: pointer;
 }
+.card {
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  height: 260px; /* 👈 reduced from 300 */
+}
+.info h4 {
+  margin: 0 0 4px 0; /* 👈 tighter */
+  font-size: 13px;
+}
+
+.price {
+  margin: 0;
+  font-size: 13px;
+}
