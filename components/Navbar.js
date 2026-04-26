@@ -22,8 +22,10 @@ export default function Navbar() {
         </h2>
 
         <div className={styles.links}>
-          <button onClick={scrollToTop}>Home</button>
-          <button onClick={scrollToShop}>Shop</button>
+          <button onClick={() => (window.location.href = "/")}>
+  Home
+</button>
+          <button onClick={scrollToTop}>Shop</button>
           <button onClick={() => setShowForm(true)}>Contact</button>
         </div>
 
