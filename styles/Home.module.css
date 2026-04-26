@@ -250,4 +250,9 @@
     grid-template-columns: repeat(4, 1fr);
   }
 }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* ✅ ALWAYS 2 */
+  gap: 12px;
+}
 }
