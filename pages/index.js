@@ -45,7 +45,7 @@ export default function Home({ products }) {
       .map((p, i) => `${i + 1}. ${p.name} - ₹${p.price}`)
       .join("\n");
 
-    const text = `🌿 Plants24 Bulk Enquiry\n\n${message}`;
+    const text = `🌿 Plants24 Enquiry\n\n${message}`;
 
     window.open(
       `https://wa.me/918421265523?text=${encodeURIComponent(text)}`,

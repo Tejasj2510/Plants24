@@ -1,49 +1,75 @@
 .card {
-  background: white;
-  border-radius: 18px;
+  background: #ffffff;
+  border-radius: 16px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  height: 300px; /* ✅ fixed height */
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.2s ease;
 }
 
+.card:hover {
+  transform: translateY(-3px);
+}
+
+/* IMAGE */
 .img {
   width: 100%;
-  height: 180px;
+  height: 150px; /* ✅ fixed image */
   object-fit: cover;
 }
 
+/* INFO */
 .info {
-  padding: 12px;
+  padding: 10px;
+  flex: 1; /* ✅ equal spacing */
+}
+
+.info h4 {
+  font-size: 14px;
+  margin: 0;
+  font-weight: 600;
 }
 
 .price {
   color: #22c55e;
   font-weight: 600;
+  font-size: 14px;
 }
 
+/* ACTION BUTTONS */
 .actions {
   display: flex;
   justify-content: space-between;
-  padding: 12px;
+  padding: 10px;
 }
 
+/* SELECT BUTTON */
 .selectBtn {
   background: #e5e7eb;
   border: none;
   padding: 6px 10px;
   border-radius: 6px;
+  font-size: 12px;
+  cursor: pointer;
 }
 
+/* SELECTED STATE */
 .selected {
   background: #22c55e;
   color: white;
 }
 
+/* BUY BUTTON */
 .buyBtn {
   background: #22c55e;
   color: white;
   border: none;
   padding: 6px 12px;
   border-radius: 20px;
+  font-size: 12px;
+  cursor: pointer;
 }

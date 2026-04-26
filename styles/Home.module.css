@@ -160,4 +160,94 @@
     padding: 10px 14px;
   }
 }
+.container {
+  padding: 16px;
+  background: #f5f5f5;
+}
+
+/* GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* ✅ mobile */
+  gap: 12px;
+}
+
+/* FILTER BUTTONS */
+.filters {
+  display: flex;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.filters button {
+  background: #e5e7eb;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 20px;
+  cursor: pointer;
+}
+
+/* WHATSAPP FLOAT */
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #22c55e;
+  color: white;
+  padding: 12px;
+  border-radius: 50%;
+  font-size: 20px;
+}
+
+/* BULK BUTTON */
+.enquireBtn {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  background: #22c55e;
+  color: white;
+  padding: 10px 16px;
+  border-radius: 25px;
+  border: none;
+}
+
+.count {
+  background: white;
+  color: black;
+  margin-right: 6px;
+  padding: 2px 6px;
+  border-radius: 50%;
+}
+
+/* FOOTER */
+.footer {
+  margin-top: 40px;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+}
+
+.footerContent {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.socials a {
+  margin-right: 10px;
+  font-size: 20px;
+}
+
+/* 📱 RESPONSIVE */
+@media (min-width: 768px) {
+  .grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
 }
