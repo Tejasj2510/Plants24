@@ -29,8 +29,22 @@
 }
 
 .info h4 {
-  font-size: 14px;
-  margin: 0;
+  font-size: 13px;
+  margin: 0;            /* ❌ remove bottom space */
+  line-height: 1.2;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+
+  min-height: 32px;
+}
+
+.price {
+  margin: 2px 0 0 0;    /* 👈 VERY SMALL GAP */
+  font-size: 13px;
+  color: #22c55e;
   font-weight: 600;
 }
 
@@ -74,20 +88,84 @@
   cursor: pointer;
 }
 .card {
-  background: #ffffff;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* ❌ remove space-between */
+  height: 240px;
+
+}
+.info {
+  padding: 6px 10px;
+  display: flex;
+  flex-direction: column;
+
+  flex: 0; /* ❌ REMOVE stretch */
+}
+
+.info h4 {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.2;
+}
+
+.price {
+  margin: 2px 0 0 0;
+  font-size: 13px;
+  color: #22c55e;
+}
+
+.card {
+  background: white;
   border-radius: 16px;
   overflow: hidden;
   display: flex;
   flex-direction: column;
 
-  height: 260px; /* 👈 reduced from 300 */
-}
-.info h4 {
-  margin: 0 0 4px 0; /* 👈 tighter */
-  font-size: 13px;
+  height: 240px;
 }
 
-.price {
-  margin: 0;
+/* IMAGE */
+.img {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+}
+
+/* INFO */
+.info {
+  padding: 6px 10px;
+  display: flex;
+  flex-direction: column;
+
+  gap: 0px; /* ✅ NO GAP */
+}
+
+/* NAME */
+.info h4 {
   font-size: 13px;
+  margin: 0;              /* ✅ remove all spacing */
+  line-height: 1.1;
+
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+
+  min-height: 28px;       /* ✅ equal height */
+}
+
+/* PRICE */
+.price {
+  margin: 0;              /* ✅ remove gap */
+  font-size: 13px;
+  color: #22c55e;
+  font-weight: 600;
+}
+
+/* ACTIONS */
+.actions {
+  margin-top: auto;       /* ✅ push to bottom */
+  padding: 6px 10px;
+  display: flex;
+  justify-content: space-between;
 }
