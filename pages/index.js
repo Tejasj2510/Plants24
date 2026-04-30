@@ -13,6 +13,8 @@ export default function Home({ products }) {
   const [category, setCategory] = useState("all");
   const [selected, setSelected] = useState([]);
 
+  
+
   // ✅ FILTER (SAFE)
   const filtered = safeProducts.filter((p) => {
   const query = search.toLowerCase().trim();
@@ -68,7 +70,7 @@ export default function Home({ products }) {
 
   return (
     <div className={styles.container}>
-      <Navbar />
+      <Navbar onSearch={setSearch} />
       <Hero />
       
 
@@ -77,14 +79,7 @@ export default function Home({ products }) {
         <button onClick={() => setCategory("all")}>All</button>
         <button onClick={() => setCategory("indoor")}>Indoor</button>
         <button onClick={() => setCategory("outdoor")}>Outdoor</button>
-        <div className={styles.searchBar}>
-  <input
-    type="text"
-    placeholder="Search by plant name or price (e.g. Cobra 700)"
-    value={search}
-    onChange={(e) => setSearch(e.target.value)}
-  />
-</div>
+        
       </div>
 
       {/* GRID */}
