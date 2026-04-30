@@ -24,10 +24,10 @@ export default function ProductCard({ product, onSelect, selected }) {
           }`}
           onClick={() => onSelect(product)}
         >
-          {selected ? "✓ Selected" : "Select"}
+          {selected ? "✓ Added" : "Add to Cart"}
         </button>
 
-        <button
+        {/* <button
           className={styles.buyBtn}
           onClick={() => {
             const msg = `I want to buy ${product.name} for ₹${product.price}`;
@@ -37,7 +37,7 @@ export default function ProductCard({ product, onSelect, selected }) {
           }}
         >
           Buy
-        </button>
+        </button> */}
       </div>
     </div>
   );
