@@ -15,12 +15,25 @@ export default function Home({ products }) {
 
   // ✅ FILTER (SAFE)
   const filtered = safeProducts.filter((p) => {
-    return (
-      (p?.name || "").toLowerCase().includes(search.toLowerCase()) &&
-      (category === "all" ||
-        (p?.category || "").toLowerCase() === category.toLowerCase())
-    );
+  const query = search.toLowerCase().trim();
+
+  // split search into words (e.g. "rose 500")
+  const parts = query.split(" ");
+
+  const name = (p?.name || "").toLowerCase();
+  const price = String(p?.price || "");
+
+  // check if ALL parts match either name OR price
+  const matchesSearch = parts.every((part) => {
+    return name.includes(part) || price.includes(part);
   });
+
+  return (
+    matchesSearch &&
+    (category === "all" ||
+      (p?.category || "").toLowerCase() === category.toLowerCase())
+  );
+});
 
   // ✅ SELECT TOGGLE
   const toggleSelect = (product) => {
@@ -57,12 +70,21 @@ export default function Home({ products }) {
     <div className={styles.container}>
       <Navbar />
       <Hero />
+      
 
       {/* FILTERS */}
       <div className={styles.filters}>
         <button onClick={() => setCategory("all")}>All</button>
         <button onClick={() => setCategory("indoor")}>Indoor</button>
         <button onClick={() => setCategory("outdoor")}>Outdoor</button>
+        <div className={styles.searchBar}>
+  <input
+    type="text"
+    placeholder="Search by plant name or price (e.g. Cobra 700)"
+    value={search}
+    onChange={(e) => setSearch(e.target.value)}
+  />
+</div>
       </div>
 
       {/* GRID */}
